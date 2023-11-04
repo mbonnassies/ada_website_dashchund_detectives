@@ -1,3 +1,9 @@
+# Site content?
+title: Ada website
+description: Our horror data story
+
+
+
 # Where things are
 source              : .
 destination         : ./_site
