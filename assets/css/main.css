@@ -3320,7 +3320,7 @@ input, select, textarea {
 /* Page Wrapper + Menu */
 
 	#page-wrapper {
-		-moz-transition: opacity 0.5s ease;
+		-moz-transition: opacity 0.5s ease; /* side bar transition */
 		-webkit-transition: opacity 0.5s ease;
 		-ms-transition: opacity 0.5s ease;
 		transition: opacity 0.5s ease;
@@ -3346,7 +3346,7 @@ input, select, textarea {
 		-webkit-transform: translateX(20em);
 		-ms-transform: translateX(20em);
 		transform: translateX(20em);
-		-moz-transition: -moz-transform 0.5s ease;
+		-moz-transition: -moz-transform 0.5s ease; /* side bar moving time */
 		-webkit-transition: -webkit-transform 0.5s ease;
 		-ms-transition: -ms-transform 0.5s ease;
 		transition: transform 0.5s ease;
@@ -3445,7 +3445,7 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease;
 		-ms-transition: background-color 0.2s ease;
 		transition: background-color 0.2s ease;
-		background: rgb(27, 27, 27); /* header color */
+		background: rgb(27, 27, 27); /* header bar color */
 		height: 3em;
 		left: 0;
 		line-height: 3em;
@@ -3642,10 +3642,10 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.75s ease, opacity 0.75s ease;
 			-ms-transition: -ms-transform 0.75s ease, opacity 0.75s ease;
 			transition: transform 0.75s ease, opacity 0.75s ease;
-			-moz-transition-delay: 3.5s;
-			-webkit-transition-delay: 3.5s;
-			-ms-transition-delay: 3.5s;
-			transition-delay: 3.5s;
+			-moz-transition-delay: 2s;
+			-webkit-transition-delay: 2s;
+			-ms-transition-delay: 2s;
+			transition-delay: 2s;
 			-moz-transform: translateY(0);
 			-webkit-transform: translateY(0);
 			-ms-transform: translateY(0);
@@ -3685,10 +3685,10 @@ input, select, textarea {
 
 		#banner:after {
 			pointer-events: none;
-			-moz-transition: opacity 3s ease-in-out;
-			-webkit-transition: opacity 3s ease-in-out;
-			-ms-transition: opacity 3s ease-in-out;
-			transition: opacity 3s ease-in-out;
+			-moz-transition: opacity 2s ease-in-out; /* smoke background reveal time */
+			-webkit-transition: opacity 2s ease-in-out;
+			-ms-transition: opacity 2s ease-in-out;
+			transition: opacity 2s ease-in-out;
 			-moz-transition-delay: 1.25s;
 			-webkit-transition-delay: 1.25s;
 			-ms-transition-delay: 1.25s;
