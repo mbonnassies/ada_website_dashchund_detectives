@@ -2817,16 +2817,28 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #b22178; /* section background color */
+			position: relative;
+			background: url('../../images/pink.jpg') center/cover fixed; /* replace 'path/to/your-image.jpg' with the actual path to your image */
 			color: #c8ece9;
 		}
+
+			.wrapper.style1::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background: #b22178; /* Color of the overlay */
+				opacity: 0.5; /* Adjust the opacity as needed (0.0 to 1.0) */
+			}
 
 			.wrapper.style1 strong, .wrapper.style1 b {
 				color: #ffffff;
 			}
 
 			.wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style1 h4, .wrapper.style1 h5, .wrapper.style1 h6 {
-				color: #ffffff;
+				color: #ffe6f4;
 			}
 
 			.wrapper.style1 hr {
@@ -2842,7 +2854,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style1 header p {
-				color: #a6e0db;
+				color: #6b918d;
 			}
 
 			.wrapper.style1 header.major h2, .wrapper.style1 header.major h3, .wrapper.style1 header.major h4, .wrapper.style1 header.major h5, .wrapper.style1 header.major h6 {
@@ -2850,7 +2862,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style1 header.major p {
-				color: #c8ece9;
+				color: #ffdbf1;
 			}
 
 			.wrapper.style1 label {
@@ -3445,7 +3457,7 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease;
 		-ms-transition: background-color 0.2s ease;
 		transition: background-color 0.2s ease;
-		background: rgb(27, 27, 27); /* header bar color */
+		background: #ff449f; /* header bar color */
 		height: 3em;
 		left: 0;
 		line-height: 3em;
@@ -3454,6 +3466,10 @@ input, select, textarea {
 		width: 100%;
 		z-index: 10000;
 	}
+		#header.scrolled {
+			background-color: rgb(27, 27, 27);
+			color: rgb(52, 52, 52);
+		}
 
 		#header h1 {
 			-moz-transition: opacity 0.2s ease;
