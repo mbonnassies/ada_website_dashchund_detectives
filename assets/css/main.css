@@ -2818,7 +2818,7 @@ input, select, textarea {
 
 		.wrapper.style1 {
 			position: relative;
-			background: url('../../images/pink.jpg') center/cover fixed; /* replace 'path/to/your-image.jpg' with the actual path to your image */
+			background: url('../../images/pinkbackground.jpeg') center/cover fixed; /* replace 'path/to/your-image.jpg' with the actual path to your image */
 			color: #c8ece9;
 		}
 
@@ -4013,5 +4013,3 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
-
-	  
