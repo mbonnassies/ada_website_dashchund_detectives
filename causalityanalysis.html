@@ -11,59 +11,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-		<style>
-			body {
-			  margin: 0;
-			  padding: 0;
-			  overflow-x: hidden; /* Hide horizontal scrollbar */
-			  height: 200vh; /* Increase the height to allow scrolling */
-			  font-family: Arial, sans-serif;
-			  position: relative;
-			}
-		
-			.background {
-			  position: fixed;
-			  top: 0;
-			  left: 0;
-			  width: 100%;
-			  height: 100%;
-			  z-index: -1; /* Place it behind other elements */
-			  background: url('background-image.jpg') center/cover no-repeat; /* Replace 'background-image.jpg' with your image */
-			}
-		
-			.content {
-			  max-width: 800px;
-			  margin: 0 auto;
-			  padding: 20px;
-			  color: white; /* Set text color to contrast with the background */
-			  z-index: 1; /* Ensure it's above the background */
-			}
-		
-			.moving-image {
-			  position: fixed;
-			  top: 50%;
-			  left: 0;
-			  width: 100%;
-			  transform: translateY(-50%);
-			  transition: transform 0.5s ease-out;
-			  z-index: 0; /* Place it behind the content */
-			}
-		
-			.moving-image img {
-			  max-width: 500px; /* Adjust the maximum width as needed */
-			  height: auto;
-			}
-		  </style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
-
+				
 				<!-- Header -->
 					<header id="header">
-						<h1><a href="generic.html">Character Analysis</a></h1>
+						<h1><a href="causalityanalysis.html">Causality Analysis</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
@@ -73,7 +29,6 @@
 											<li><a href="index.html">Intro</a></li>
 											<li><a href="genreanalysis.html">Genre Analysis</a></li>
 											<li><a href="generic.html">Character Analysis</a></li>
-											<li><a href="causalityanalysis.html">Causality Analysis</a></li>
 											<li><a href="elements.html">Elements</a></li>
 											<li><a href="moreinfo.html">More Info</a></li>
 										</ul>
@@ -86,12 +41,11 @@
 				<!-- Main -->
 					<article id="main">
 						<header>
-							<h2>Character Analysis</h2>
+							<h2>Causality Analysis</h2>
 							<p>Using the MBTI personalities to assess Barbenheimer</p>
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
-								<p>We’ve spent quite some type looking at the movie genres and the general sentiment analysis. Now we come to the heroes and anti-heroes of the stories. They form the foundation for the course of the story. We root for them, whereby a wide range of emotions are triggered: we laugh, shriek, giggle, cry or even hide behind a pillow if we feel like we can’t watch what comes next. The captivating story conveyed by the characters makes us curious to see what will happen next, whether they will manage to overcome the big hurdle before time runs out, or whether there will be a happy ending and the long-awaited kiss after all.</p>
 
 								<h3>What is MBTI?</h3>
 								<p>The added data contains the Myers–Briggs Type Indicator (MBTI) for the characters in the original data set. The MBTI is the result of a test that analyzes psychological preferences such as decision-making and how the observed individual perceives the world. The character types were based on Carl Jung's Psychological Types. 
@@ -115,18 +69,10 @@
 							
 									  <hr />
 
-								<p>Barbie is very happy, outgoing, supportive and overall spreads a lot of positive energy. She holds her community together, hosts many social events and thereby demonstrated good manners and hospitatily.
-	Throughout the movie we can see some character development where also other apects of the ESFJ character type get to shine: Barbie builds a lasting relationship tot he two humans she gets in contact with – which is also why she has the doubts in the fist place, as she had a listening ear for her owner in the real world. Even after all these years she way loyal to that owner and lent a helping hand to re-connect mother and daughter and spread some joy.  
-	In full ESFJ character Barbie does not appreciate it when she gets accused of being uncool and her help unwanted in the real world. In the end Barbie can find some fulfillment by joining the challenges of the real world and setting an example for reaching goals that (especially young girls) set their mind to and bringing people together in the process. </p>							
->								<section>
-									<h4>Causality Analysis</h4>
-									<p>Now that we've explored a fusion of genre and character analysis, this next <a href=causalityanalysis.html>causality analysis</a> will put the pieces of the puzzle together.</p>
-								</section>
-								
+								<p>Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui, at vestibulum sit amet, auctor bibendum neque.</p>
+
 							</div>
 						</section>
-						
-						
 					</article>
 
 				<!-- Footer -->
@@ -144,9 +90,6 @@
 					</footer>
 
 			</div>
-			<div class="moving-image">
-				<img src="images/Barbie_car.png" alt="Moving Image">
-			</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -156,13 +99,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-				window.addEventListener('scroll', function () {
-				  var scrollPosition = window.scrollY;
-				  var movingImage = document.querySelector('.moving-image');
-				  movingImage.style.transform = 'translateX(' + scrollPosition + 'px)';
-				});
-			</script>
 
 	</body>
 </html>
