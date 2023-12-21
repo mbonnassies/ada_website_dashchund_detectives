@@ -1,0 +1,14 @@
+.d3-tip {
+    font-size: 14px;
+}
+
+.tooltip-content {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.tooltip-value {
+    font-weight: bold;
+}
