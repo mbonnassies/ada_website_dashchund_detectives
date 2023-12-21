@@ -30,9 +30,10 @@
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Generic</a></li>
+											<li><a href="index.html">Intro</a></li>
+											<li><a href="generic.html">Character Analysis</a></li>
 											<li><a href="elements.html">Elements</a></li>
+											<li><a href="moreinfo.html">More Info</a></li>
 										</ul>
 									</div>
 								</li>
@@ -56,7 +57,8 @@
 					<section id="one" class="wrapper style1 special">
 						<div class="inner">
 							<header class="major">
-								<h2>Small introduction</h2>
+								<h2>Arcu aliquet vel lobortis ata nisl<br />
+								eget augue amet aliquet nisl cep donec</h2>
 								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
 								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
 								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
@@ -153,6 +155,10 @@
 							<div id="violin_plot"></div>
 
 							<p>Vestibulum ultrices risus velit, sit amet blandit massa auctor sit amet. Sed eu lectus sem. Phasellus in odio at ipsum porttitor mollis id vel diam. Praesent sit amet posuere risus, eu faucibus lectus. Vivamus ex ligula, tempus pulvinar ipsum in, auctor porta quam. Proin nec dui cursus, posuere dui eget interdum. Fusce lectus magna, sagittis at facilisis vitae, pellentesque at etiam. Quisque posuere leo quis sem commodo, vel scelerisque nisi scelerisque. Suspendisse id quam vel tortor tincidunt suscipit. Nullam auctor orci eu dolor consectetur, interdum ullamcorper ante tincidunt. Mauris felis nec felis elementum varius.</p>
+							
+							<!-- Create a div where the graph will take place -->
+							<div id="heatmap_plot"></div>
+							<div id="hexbin_plot"></div>
 
 							<hr />
 
@@ -198,16 +204,6 @@
 			</div>
 
 		<!-- Scripts -->
-			<!-- Test script to see if d3 is correcly loaded -->
-			<script>
-				try {
-					d3.select("body");
-					console.log("D3.js is loaded correctly!");
-				} catch (error) {
-					console.log("D3.js is not loaded correctly: ", error);
-				}
-			</script>
-
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
