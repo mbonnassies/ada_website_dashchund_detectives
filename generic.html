@@ -289,11 +289,11 @@
 				</ul>
 			</footer>
 
-			</div>
-			<div class="moving-image">
-				<img src="images/Barbie_car.png" alt="Moving Image">
-			</div>
-
+		</div>
+		<div class="moving-image">
+			<img src="images/Barbie_car.png" alt="Moving Image">
+		</div>
+		
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -302,7 +302,7 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-
+		
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
 		<script src="assets/js/plots/grossing_vs_diversity.js"></script>
 		<script src="assets/js/plots/rating_vs_diversity.js"></script>
@@ -314,8 +314,13 @@
 		<script src="assets/js/plots/ethnicities_occurence.js"></script>
 		<script src="assets/js/plots/movies_per_year.js"></script>
 		<script src="assets/js/plots/genre_vs_mbti.js"></script>
-
-
-
-</body>
-</html>
+		<script>
+			window.addEventListener('scroll', function () {
+			  var scrollPosition = window.scrollY;
+			  var movingImage = document.querySelector('.moving-image');
+			  movingImage.style.transform = 'translateX(' + scrollPosition + 'px)';
+			});
+		</script>
+		
+		</body>
+		</html>
