@@ -47,27 +47,38 @@
 						<section class="wrapper style5">
 							<div class="inner">
 
-								<h3>What is MBTI?</h3>
-								<p>The added data contains the Myers–Briggs Type Indicator (MBTI) for the characters in the original data set. The MBTI is the result of a test that analyzes psychological preferences such as decision-making and how the observed individual perceives the world. The character types were based on Carl Jung's Psychological Types. 
-									Here are some key element of the MBTI character types:</p>
-								<p>E vs. I → Extroverted vs. Introverted<br>S vs. N → Sensing vs. Intuitive<br>T vs. F → Thinking vs. Feeling<br>J vs. P → Judging vs. Percieving</p> 
-									
-								<p>If you want to learn more about the the character types visit our <a href=moreinfo.html>More Info</a> page.</p>
-								<p>The personality type can be categorized by taking and evaluating a questionnaire. Try it yourself! You might be happy (or confused), to see which character best describes you… But before, come on this short journey to learn some more about the different character types in movies how trends changed over time, and how Barbenheimer compares.</p>
-
-					
-
-								<hr />
-
+								<p><span class="image right" style="max-width: 300px;"><img src="images/ken-beach.png" alt="" /></span>Don’t worry, we’ve reached the final part of our analysis: Soon you can go back to beach, not surfing, just BEACH…</p>
+								<p>Building up on our previous plots and analyses on genre and character types, we now want to acknowledge the reliability of our data comparisons. This is why we are performing a causality analysis.</p>
 								<h4>Research Questions</h4>
 								<p>These were the following questions identified that we aimed to discuss in this section:<br>
 									<ul>
-										<li>Which characters have grossed the highest?</li>
-										<li>How does the prevalence of characters in movies compare to that of society?</li>
-										<li>What character personality is most prominent in movies?</li>
+										<li>Research question one?</li>
+										<li>Research question two?</li>
+										<li>Research question three?</li>
 									  </ul></p>
 							
-									  <hr />
+								<hr />
+								<h3>Ethnic vs actors</h3>
+								<p>The following histogram portrays the ethnicities of all actors in the movies dataset. We can observe first and foremost that caucasians represent the large majority of the actors, followed by african, and then trailing with other ethnicities in low minority.</p> 
+								<div class="col-12"><span class="image fit"><img src="images/CT-I1.png" alt="" /></span></div>
+								<h3>Ethnic vs actors</h3>
+								<p>The first scatter plot coupled with a probability density distribution tests the comparison of the number of different ethnicities in a movie and the revenue generated from the movie. What is observed is that as the number of ethnicities increases, the movie tends towards a higher revenue. However, not much can be concluded, since there is visibly a much larger amount of movies with less ethnicities than there is with over 3 ethnicities. Once the plot reaches 5 to 6 different ethnicities, the data becomes less reliable.</p>
+								<div class="col-12"><span class="image fit"><img src="images/CT-I1.png" alt="" /></span></div>
+								<h3>Average Movie Ratings versus the Number of Different Ethnicities</h3>
+								<p>The second plot compares the movie rating to the number of different ethnicities. Again, by disregarding the outliers stemming from movies with 5 and 6 different ethnicities, we observe that the ratings maintain similar ratings, thus reinforcing that the number of diversity does not impact movie ratings.</p>
+								<h3>Box Plots</h3>
+								<p>Comparatively, box plots are presented for a more visual representation of the previous graphs. Since the distribution of ethnicities is very skewed, a Kruskal-Wallis test was conducted to fortify the analysis, and the p-value was  XXXX. This allows to test if we can reject the null hypothesis: all ethnic groups have the same median revenue. We see that the ethnicities do not all have the same revenue, and this can be observed through the interactive box plot.</p>
+								<div class="col-12"><span class="image fit"><img src="images/CT-I1.png" alt="" /></span></div>
+								<p>Movie rating versus different ethnicities was also compared through a box plot. We also conducted a Kruskal-Wallis test, and we came up with the following conclusion: different ethnicities do not have the same ratings, but we can observe that the repartition of ethnicities is skewed, as there are much much caucasians as opposed to other ethnicities. The Kruskal-Wallis test is non-sensitive to the distribution of the data, however it is a non-parametric test and only give us the information that at least one category doesn’t have the same median, but we do not know how many and which ones.</p>
+								<div class="col-12"><span class="image fit"><img src="images/CT-I1.png" alt="" /></span></div>
+								<p>A scatter plot of the movie box office revenue versus the average rating depicts the link between box office revenue and rating. A regression was made - a low R-squared value of XXX and low p-test value of XXXX and a slope of XXXX. For every rating point added, there is 13mmillion grossing more? But the grossing is affected by other things and the rating does not affect the grossing as much.</p>
+								<div class="col-12"><span class="image fit"><img src="images/CT-I1.png" alt="" /></span></div>
+								<p>The following scatter plot compares the average rating of a movie to the release year. What is observable is that the grossing increases throughout the years and the ratings have remained even.</p>
+								<div class="col-12"><span class="image fit"><img src="images/CT-I1.png" alt="" /></span></div>
+
+								<hr />
+
+								
 
 								<p>Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui, at vestibulum sit amet, auctor bibendum neque.</p>
 
