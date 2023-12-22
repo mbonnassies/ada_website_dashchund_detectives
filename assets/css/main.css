@@ -3457,7 +3457,7 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease;
 		-ms-transition: background-color 0.2s ease;
 		transition: background-color 0.2s ease;
-		background: #ff449f; /* header bar color */
+		background: rgb(27, 27, 27); /* header bar color */
 		height: 3em;
 		left: 0;
 		line-height: 3em;
@@ -3466,10 +3466,6 @@ input, select, textarea {
 		width: 100%;
 		z-index: 10000;
 	}
-		#header.scrolled {
-			background-color: rgb(27, 27, 27);
-			color: rgb(52, 52, 52);
-		}
 
 		#header h1 {
 			-moz-transition: opacity 0.2s ease;

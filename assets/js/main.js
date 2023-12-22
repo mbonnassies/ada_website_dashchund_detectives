@@ -65,42 +65,4 @@
 				visibleClass: 'is-menu-visible'
 			});
 
-	// Header.
-
-		function updateHeaderColor() {
-			var scrollPosition = $window.scrollTop();
-		
-			// Change header color based on scroll position (adjust the nb of pixels).
-			if (scrollPosition > 1400) {
-			$header.addClass('scrolled');
-			} else {
-			$header.removeClass('scrolled');
-			}
-		}
-
-		// Call updateHeaderColor on scroll.
-		$window.on('scroll', function() {
-			updateHeaderColor();
-		});
-		
-		// Call updateHeaderColor on page load.
-		$window.on('load', function() {
-			updateHeaderColor();
-		});
-		
-
-		if ($banner.length > 0
-		&&	$header.hasClass('alt')) {
-
-			$window.on('resize', function() { $window.trigger('scroll'); });
-
-			$banner.scrollex({
-				bottom:		$header.outerHeight() + 1,
-				terminate:	function() { $header.removeClass('alt'); },
-				enter:		function() { $header.addClass('alt'); },
-				leave:		function() { $header.removeClass('alt'); }
-			});
-
-		}
-
 })(jQuery);
