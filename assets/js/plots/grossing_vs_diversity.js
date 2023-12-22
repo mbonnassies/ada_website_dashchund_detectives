@@ -129,6 +129,7 @@ svg.call(tip);
 
   dataPoints.forEach(function(d) {
     svg.append("circle")
+      .datum(d)  // Bind the data to the circle element
       .attr("cx", x(d.diversity_count) + x.bandwidth()/2)
       .attr("cy", y(d.Movie_box_office_revenue))
       .attr("r", 3)

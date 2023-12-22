@@ -123,9 +123,10 @@ svg1.call(tip);
     {Movie_box_office_revenue: 1442000000, averageRating: 7, diversity_count: "4", color: "#b22178", name:'Barbie'},
     {Movie_box_office_revenue: 953200000, averageRating: 8.4, diversity_count: "2", color: "#1b1b1b", name: 'Oppenheimer'}
   ];
-  
+
   dataPoints.forEach(function(d) {
     svg1.append("circle")
+      .datum(d)  // Bind the data to the circle element
       .attr("cx", x(d.diversity_count))
       .attr("cy", y(d.averageRating))
       .attr("r", 3)
