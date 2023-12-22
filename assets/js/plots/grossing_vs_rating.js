@@ -14,6 +14,11 @@ var svg4 = d3.select("#grossing_vs_rating")
 
 //Read the data
 d3.tsv("data/movies.imdbrating.tsv", function(data) {
+  // Manually add two data points
+  var dataPoints = [
+    {Movie_box_office_revenue: 1442000000, averageRating: 7, color: "#b22178", name:'Barbie'},
+    {Movie_box_office_revenue: 953200000, averageRating: 8.4, color: "#1b1b1b", name: 'Oppenheimer'}
+  ];
 
   // Add X axis
   var x = d3.scaleLinear()
@@ -30,26 +35,9 @@ d3.tsv("data/movies.imdbrating.tsv", function(data) {
   svg4.append("g")
     .call(d3.axisLeft(y));
 
-  var colorScaleNormal = d3.scaleLog()
+  var myColor4 = d3.scaleLog()
     .range(["#1f78b4", "#b2df8a"])
     .domain([y.domain()[0], y.domain()[1]]);
-  
-  var colorScaleColorblind = d3.scaleSequential(d3.interpolateInferno)
-    .domain([y.domain()[0], y.domain()[1]]);
-  
-  // Initially set the color scale to the normal one
-  var myColor4 = colorScaleNormal;
-  
-  // Listen for changes to the checkbox
-  d3.select("#colorblindFriendly").on("change", function() {
-    if (this.checked) {
-      // If the checkbox is checked, use the colorblind-friendly color scale
-      myColor4 = colorScaleColorblind;
-    } else {
-      // If the checkbox is not checked, use the normal color scale
-      myColor4 = colorScaleNormal;
-    }
-  });
 
   // Create a tooltip
   var tip = d3.tip()
@@ -67,6 +55,26 @@ d3.tsv("data/movies.imdbrating.tsv", function(data) {
 
   // Call the tooltip
   svg4.call(tip);
+
+  dataPoints.forEach(function(d) {
+    svg4.append("circle")
+      .attr("cx", x(d.averageRating))
+      .attr("cy", y(d.Movie_box_office_revenue))
+      .attr("r", 3)
+      .style("fill", d.color)
+      .style("opacity", 1)
+      .style("stroke", "white")
+      .on('mouseover', tip.show)  // Show tooltip on mouseover
+      .on('mouseout', tip.hide);  // Hide tooltip on mouseout
+    svg4.append("text")
+      .attr("x", x(d.averageRating))
+      .attr("y", y(d.Movie_box_office_revenue) - 12)
+      .text(d.name)  // Set the text to the averageRating value
+      .attr("font-size", "10px")
+      .attr("dx", "-.8em")
+      .attr("dy", ".35em")
+      .style("fill", "black");
+  });
 
   // Add dots
   svg4.append('g')
