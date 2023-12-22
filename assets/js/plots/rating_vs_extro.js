@@ -80,6 +80,7 @@ d3.csv("data/extro.csv", function(data) {
 
   dataPoints.forEach(function(d) {
     svg10.append("circle")
+      .datum(d)  // Bind the data to the circle element
       .attr("cx", x(d.extro_proportion))
       .attr("cy", y(d.averageRating))
       .attr("r", 3)

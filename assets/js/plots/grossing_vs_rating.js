@@ -58,6 +58,7 @@ d3.tsv("data/movies.imdbrating.tsv", function(data) {
 
   dataPoints.forEach(function(d) {
     svg4.append("circle")
+      .datum(d)  // Bind the data to the circle element
       .attr("cx", x(d.averageRating))
       .attr("cy", y(d.Movie_box_office_revenue))
       .attr("r", 3)
