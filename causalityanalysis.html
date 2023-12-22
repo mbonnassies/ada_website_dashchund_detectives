@@ -36,7 +36,7 @@
 											<li><a href="genreanalysis.html">Genre Analysis</a></li>
 											<li><a href="generic.html">Character Analysis</a></li>
 											<li><a href="causalityanalysis.html">Causality Analysis</a></li>
-											<li><a href="conclusion.html">Conclusion</a></li>
+											<li><a href="elements.html">Elements</a></li>
 											<li><a href="moreinfo.html">More Info</a></li>
 										</ul>
 									</div>
@@ -56,18 +56,17 @@
 
 								<p><span class="image right" style="max-width: 300px;"><img src="images/ken-beach.png" alt="" /></span>Don’t worry, we’ve reached the final part of our analysis: soon you can go back to beach, not surfing, just BEACH…</p>
 								<p>Building up on our previous plots and analyses on genre and character types, we now want to acknowledge the reliability of our data comparisons. This is why we are performing a causality analysis.</p>
-								<h4>Research Questions</h4>
-								<p>These were the following questions identified that we aimed to discuss in this section:<br>
+								<h4>Research Question</h4>
+								<p>In this section we'll discuss the following question:<br>
 									<ul>
 										<li>What are the influences of various movie parameters on its succes?</li>
-										<li>Research question two?</li>
-										<li>Research question three?</li>
+		
 									  </ul></p>
 							
 								<hr />
 								<h3>How do we define success?</h3>
 								<p>We have identified two main indicators of the success of a movie. First, the average rating of the movie provided by IMDb, that should represent the popular opinion about this movie.
-								However, unless they have a strong opinion about a movie, most people don't take the time to express their views and the ratings might not be the perfect representation.
+								However, unless they have a strong opinion about a movie, most people don't take the time to express their views and therefore, the ratings might not be the perfect representation.
 								The second indicator is the Box Office Revenue, as success could be defined by how popular the movie is. One could also argue that some genres are more popular than other and would gross more,
 								and therefore doesn't give an idea of the quality of the movie. We decided to measure if ratings and grossing were correlated in some ways. For that, we
 								conducted a linear regression on our data and found the following results:<br>
@@ -80,18 +79,20 @@
 								</p>
 
 								<h3>Analysis on diversity</h3>
-								
-								<p>We decided to group the data manually into broader ethnic groups for more meaningful conculsions. The following histogram portrays the ethnicities of all actors in the movies dataset. We can observe first and foremost that caucasians represent the large majority of the actors, followed by african, and then trailing with other ethnicities in low minority. </p> 
+								<figure>
+									<img src="images/cast-bo.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
+								</figure>
+								<p>We decided to group the data manually into broader ethnic groups for more meaningful conculsions. The following histogram portrays the ethnicities of all actors in the movies dataset. First and foremost, we can see that caucasians make up the vast majority of actors (e.g., Margot Robbie as Barbie, Ryan Gosling as Ken and Cillian Murphy as Robert J. Oppenheimer), followed by african, and  other ethnicities, who are in the minority. </p> 
 								<div style="text-align: center; vertical-align: middle;" id="ethnicities_occurence"></div>
 								<p>We decided to see if diversity, measured by the number of different ethnicities in a movie, had an impact on the success of that movie.
 								The first violin plot tests the comparison of the number of different ethnicities in a movie and the revenue generated from the movie. What is observed is that as the number of ethnicities increases, the movie tends towards a higher revenue.
-								We can also notice that the data is unevenly distributed, as most movies have maximum 3 different ethnic groups. We computed a linear regression and found a slope of \(\beta_1 = 3.33 \cdot 10^7\) and an intercept of \(\beta_0 = 2.37 \cdot 10^7\), with a p-value of \(p = 3.36 \cdot 10^{-214}\) and \(R^2 = 0.033\). Once again, the low p-value combined with a low R-squared value indicate a weak correlation between both parameters.</p>
+								We can also notice that the data is unevenly distributed, as most movies have maximum of three different ethnic groups. We computed a linear regression and found a slope of \(\beta_1 = 3.33 \cdot 10^7\) and an intercept of \(\beta_0 = 2.37 \cdot 10^7\), with a p-value of \(p = 3.36 \cdot 10^{-214}\) and \(R^2 = 0.033\). Once again, the low p-value combined with a low R-squared value indicate a weak correlation between both parameters.</p>
 								<div style="text-align: center; vertical-align: middle;" id="grossing_vs_diversity"></div>
 								<p>The second plot compares the movie rating to the number of different ethnicities:</p>
 								<div style="text-align: center; vertical-align: middle;" id="rating_vs_diversity"></div>
-								<p>Again, by disregarding the outliers stemming from movies with 5 and 6 different ethnicities, we observe that the ratings maintain similar ratings, thus reinforcing that the number of diversity does not impact movie ratings. The linear regression yields \(\beta_1 = -0.12\) and an intercept of \(\beta_0 = 6.62\), with a p-value of \(p = 6.26 \cdot 10^{-66}\) and \(R^2 = 0.010\), giving an even weaker correlation since R-squared is very low and the slope is almost null.</p>
+								<p>Again, by disregarding the outliers stemming from movies with five or six different ethnicities, we observe that the ratings maintain similar ratings, thus reinforcing that the number of diversity does not impact movie ratings. The linear regression yields \(\beta_1 = -0.12\) and an intercept of \(\beta_0 = 6.62\), with a p-value of \(p = 6.26 \cdot 10^{-66}\) and \(R^2 = 0.010\), giving an even weaker correlation since R-squared is very low and the slope is almost null.</p>
 								
-								<h3>Let's compare ethic groups!</h3>
+								<h3>Let's compare ethnic groups!</h3>
 								<p>We decided to measure the effect of the ethnicities of the cast in a movie. We previously looked at the diversity, let's now find out about ethnicity. Since the distribution of ethnicities is very skewed, a Kruskal-Wallis test was conducted to fortify the analysis for both Box Office Revenue and Ratings, and the p-values found are respectively \(p = 7.61 \cdot 10^{-11}\) for Revenues, and \(p = 9.22 \cdot 10^{-42}\) for Ratings. 
 								This allows to test if we can reject the null hypothesis: all ethnic groups have the same median revenue/rating. Since the p-values are very low, we conclude that the ethnicities do not all have the same revenue, and this can be observed through the interactive box plot.</p>
 								<div style="text-align: center; vertical-align: middle;" id="grossing_vs_ethnicity"></div>
@@ -100,7 +101,10 @@
 								We can observe that the repartition of ethnicities is skewed, as there are much much caucasians as opposed to other ethnicities. The Kruskal-Wallis test is non-sensitive to the distribution of the data, however it is a non-parametric test and only give us the information that at least one category doesn’t have the same median, but we do not know how many and which ones.</p>
 								
 								<h3>What about release years?</h3>
-
+								<p>Remember Barbenheimer? Fun fact: they were both released on the same day, the 21st of July 2023 (in the USA)! Was it a tough decision for you which one to watch first or did you have a preference from the start?</p>
+								<figure>
+									<img src="images/release-date.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
+								</figure>
 								<p>To continue our investigation on the factors of success, we can look at the influence of the realease year over Box Office Revenue and Ratings. 
 								The following scatter plot compares the Revenue of a movie to the release year. We computed a linear regression and got the following results: \(\beta_1 = 1.06 \cdot 10^6\) and an intercept of \(\beta_0 = -2.06 \cdot 10^9\), with a p-value of \(p = 2.25 \cdot 10^{-65}\) and \(R^2 = 0.034\). The conclusion remains the same, there is a weak correlation between Revenues and Release Year. This might be due to many different factors (inflation, popularity of cinema).</p>
 								<div style="text-align: center; vertical-align: middle;" id="grossing_vs_release_year"></div>
@@ -112,7 +116,9 @@
 								<hr />
 
 								<h3>Do characters archetype affect the popularity?</h3>
-
+								<figure>
+									<img src="images/difference-bo.jpg" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
+								</figure>
 								<p>What is the biggest difference between Barbie and Oppenheimer? That's right, personality. In our endless search for factors of success, we will now use the results from the MBTI analysis to determine if having extroverted characters boost the Ratings and Revenues.</p>
 								Let's first look at the plot of Ratings against the proportion of extroverted characters in a movie:</p>
 								<p><div style="text-align: center; vertical-align: middle;" id="ratings_vs_extro"></div>
@@ -120,10 +126,7 @@
 								Let's now try pair matching to eliminate covariates and draw meaningful conclusions. We matched movies along many parameters, such as genre, release year, number of characters, number of votes for rating. Since the proportion of extroverted characters is not a binairy variable, we also matched movies with the same proportion of one type so that we will just be testing the binairy condition "has more extroverted characters than introverted characters".
 								Since we don't have that much data, we did not perform exact matching but rather propensity score matching using the mentionned parameters. 
 								</p>
-								<p>
-									<div style="text-align: center; vertical-align: middle;" id="characters_per_group"></div>
-									<div style="text-align: center; vertical-align: middle;" id="year_per_group"></div>
-								</p>
+								<p></p>
 							
 
 							</div>
@@ -161,8 +164,6 @@
 		<script src="assets/js/plots/movies_per_year.js"></script>
 		<script src="assets/js/plots/genre_vs_mbti.js"></script>
 		<script src="assets/js/plots/rating_vs_extro.js"></script>
-		<script src="assets/js/plots/characters_per_group.js"></script>
-		<script src="assets/js/plots/year_per_group.js"></script>
 
 
 
