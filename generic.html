@@ -11,6 +11,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+		<script src="https://d3-legend.susielu.com/d3-legend.min.js"></script>
+		<link rel="stylesheet" href="assets/css/styles.css">
 
 		<style>
 			body {
@@ -296,20 +300,27 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script>
-				window.addEventListener('scroll', function () {
-				  var scrollPosition = window.scrollY;
-				  var movingImage = document.querySelector('.moving-image');
-				  movingImage.style.transform = 'translateX(' + scrollPosition + 'px)';
-				});
-			</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-	</body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
+		<script src="assets/js/plots/grossing_vs_diversity.js"></script>
+		<script src="assets/js/plots/rating_vs_diversity.js"></script>
+		<script src="assets/js/plots/rating_vs_ethnicity.js"></script>
+		<script src="assets/js/plots/grossing_vs_ethnicity.js"></script>
+		<script src="assets/js/plots/grossing_vs_rating.js"></script>
+		<script src="assets/js/plots/rating_vs_release_year.js"></script>
+		<script src="assets/js/plots/grossing_vs_release_year.js"></script>
+		<script src="assets/js/plots/ethnicities_occurence.js"></script>
+		<script src="assets/js/plots/movies_per_year.js"></script>
+		<script src="assets/js/plots/genre_vs_mbti.js"></script>
+
+
+
+</body>
 </html>
