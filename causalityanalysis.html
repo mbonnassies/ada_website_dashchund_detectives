@@ -119,14 +119,14 @@
 									<img src="images/difference-bo.jpg" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
 								</figure>
 								<p align="justify">What is the biggest difference between Barbie and Oppenheimer? That's right, personality. In our endless search for factors of success, we will now use the results from the MBTI analysis to determine if having extroverted characters boost the Ratings and Revenues.</p>
-								Let's first look at the plot of Ratings against the proportion of extroverted characters in a movie. Here we have both a barplot with 95% confidence intervals and a scatter plot of all the data points. Looking at the bar plot we may think that there is lower rating as extroversion proportion increases but running a Chi-squared test returns a p-value of 0.2328 showing that the differences in average ratings are not statistically significant.</p>
+								<p align="justify">Let's first look at the plot of Ratings against the proportion of extroverted characters in a movie. Here we have both a barplot with 95% confidence intervals and a scatter plot of all the data points. Looking at the bar plot we may think that there is lower rating as extroversion proportion increases but running a Chi-squared test returns a p-value of 0.2328 showing that the differences in average ratings are not statistically significant.</p>
 								<figure>
 									<img src="images/bar_plot_averageRating.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
 								</figure>
 								<p align="justify"><div style="text-align: center; vertical-align: middle;" id="ratings_vs_extro"></div>
-								At first sight, it seems that movies with extroverted characters might have slightly worse ratings than movies with introverted characters. The correlation, if it exists, would be weak. 
+								<p align="justify">At first sight, it seems that movies with extroverted characters might have slightly worse ratings than movies with introverted characters. The correlation, if it exists, would be weak. 
 								Let's now try pair matching to eliminate covariates and draw meaningful conclusions. We matched movies along many parameters, such as genre, release year, number of characters, number of votes for rating. Since the proportion of extroverted characters is not a binary variable, we also matched movies with the same proportion of one type so that we require "in a pair, movie 1 has as many extroverted characters as movie 2 has extroverted characters".
-								We used a mix of methods, exact matching when possible (eg. number of characters) and also propensity score matching (number of votes, release year). 
+								We used a mix of methods, exact matching when possible (eg. number of characters) and also propensity score matching (number of votes, release year).</p>
 								</p>
 								<p align="justify">After performing the linear regression we obtain a slope coefficient of -0.2232 which isn't a very strong correlation and the p-value for it is 0.042 which makes the result statistically significant. However we do notice the R-squared value of 0.005 is extremely low which means that extroverted proportion explains almost none of the variance in average rating.
 								On the scatter plot below, which shows only the paired movies, we see that there is still no trend that appears, meaning there could possibly be even more covariates that we did not take into account. We also see in the bar plot that there is still no trend appearing in the data.
