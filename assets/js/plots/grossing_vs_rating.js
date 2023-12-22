@@ -30,22 +30,26 @@ d3.tsv("data/movies.imdbrating.tsv", function(data) {
   svg4.append("g")
     .call(d3.axisLeft(y));
 
-  var myColor = d3.scaleLog()
-    .range(["#1f78b4", "#b2df8a"]) // Update the color range to a more visible combination
-    .domain([y.domain()[0], y.domain()[1]]); // Use the domain of the y scale
-
-  // Add a tooltip div. Here I define the general feature of the tooltip: stuff that do not depend on the data point.
-  // Its opacity is set to 0: we don't see it by default.
-  var tooltip = d3.select("#grossing_vs_rating")
-    .append("div")
-    .style("opacity", 0)
-    .attr("class", "tooltip")
-    .style("background-color", "white")
-    .style("border", "solid")
-    .style("border-width", "1px")
-    .style("border-radius", "5px")
-    .style("padding", "10px")
-
+  var colorScaleNormal = d3.scaleLog()
+    .range(["#1f78b4", "#b2df8a"])
+    .domain([y.domain()[0], y.domain()[1]]);
+  
+  var colorScaleColorblind = d3.scaleSequential(d3.interpolateInferno)
+    .domain([y.domain()[0], y.domain()[1]]);
+  
+  // Initially set the color scale to the normal one
+  var myColor = colorScaleNormal;
+  
+  // Listen for changes to the checkbox
+  d3.select("#colorblindFriendly").on("change", function() {
+    if (this.checked) {
+      // If the checkbox is checked, use the colorblind-friendly color scale
+      myColor = colorScaleColorblind;
+    } else {
+      // If the checkbox is not checked, use the normal color scale
+      myColor = colorScaleNormal;
+    }
+  });
 
   // Create a tooltip
   var tip = d3.tip()
@@ -80,61 +84,6 @@ d3.tsv("data/movies.imdbrating.tsv", function(data) {
     .style("stroke", "white")
     .on('mouseover', tip.show)  // Show tooltip on mouseover
     .on('mouseout', tip.hide);  // Hide tooltip on mouseout
-
-  // Calculate the line of best fit (least squares method)
-  var xSeries = data.map(function(d) { return parseFloat(d.averageRating); });
-  var ySeries = data.map(function(d) { return parseFloat(d.Movie_box_office_revenue); });
-
-  var leastSquaresCoeff = leastSquares(xSeries, ySeries);
-
-  // apply the results of the least squares regression
-  var x1 = d3.min(data, function(d) { return d.averageRating; });
-  var y1 = leastSquaresCoeff[0] + leastSquaresCoeff[1];
-  var x2 = d3.max(data, function(d) { return d.averageRating; });
-  var y2 = leastSquaresCoeff[0] * xSeries.length + leastSquaresCoeff[1];
-  var trendData = [[x1,y1,x2,y2]];
-
-  var trendline = svg4.selectAll(".trendline")
-      .data(trendData);
-
-  trendline.enter()
-      .append("line")
-      .attr("class", "trendline")
-      .attr("x1", function(d) { return x(d[0]); })
-      .attr("y1", function(d) { return y(d[1]); })
-      .attr("x2", function(d) { return x(d[2]); })
-      .attr("y2", function(d) { return y(d[3]); })
-      .attr("stroke", "black")
-      .attr("stroke-width", 1);
-
-  // display equation on the chart
-  svg4.append("text")
-      .text("eq: " + leastSquaresCoeff[0] + "x + " + leastSquaresCoeff[1])
-      .attr("class", "text-label")
-      .attr("x", function(d) { return x(x2) - 60; })
-      .attr("y", function(d) { return y(y2) - 30; });
-
-  // least squares method
-  function leastSquares(xSeries, ySeries) {
-      var reduceSumFunc = function(prev, cur) { return prev + cur; };
-      
-      var xBar = xSeries.reduce(reduceSumFunc) * 1.0 / xSeries.length;
-      var yBar = ySeries.reduce(reduceSumFunc) * 1.0 / ySeries.length;
-
-      var ssXX = xSeries.map(function(d) { return Math.pow(d - xBar, 2); })
-          .reduce(reduceSumFunc);
-      
-      var ssYY = ySeries.map(function(d) { return Math.pow(d - yBar, 2); })
-          .reduce(reduceSumFunc);
-          
-      var ssXY = xSeries.map(function(d, i) { return (d - xBar) * (ySeries[i] - yBar); })
-          .reduce(reduceSumFunc);
-      
-      var slope = ssXY / ssXX;
-      var intercept = yBar - (xBar * slope);
-      
-      return [slope, intercept];
-  }
 
   // Chart title
   svg4.append("text")
