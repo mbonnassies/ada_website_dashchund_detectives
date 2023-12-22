@@ -38,16 +38,16 @@ d3.tsv("data/movies.imdbrating.tsv", function(data) {
     .domain([y.domain()[0], y.domain()[1]]);
   
   // Initially set the color scale to the normal one
-  var myColor = colorScaleNormal;
+  var myColor4 = colorScaleNormal;
   
   // Listen for changes to the checkbox
   d3.select("#colorblindFriendly").on("change", function() {
     if (this.checked) {
       // If the checkbox is checked, use the colorblind-friendly color scale
-      myColor = colorScaleColorblind;
+      myColor4 = colorScaleColorblind;
     } else {
       // If the checkbox is not checked, use the normal color scale
-      myColor = colorScaleNormal;
+      myColor4 = colorScaleNormal;
     }
   });
 
@@ -79,7 +79,7 @@ d3.tsv("data/movies.imdbrating.tsv", function(data) {
     .attr("cx", function (d) { return x(d.averageRating); })
     .attr("cy", function (d) { return y(d.Movie_box_office_revenue); })
     .attr("r", 3)
-    .style("fill", function(d){ return(myColor(d.Movie_box_office_revenue))})
+    .style("fill", function(d){ return(myColor4(d.Movie_box_office_revenue))})
     .style("opacity", 0.5)
     .style("stroke", "white")
     .on('mouseover', tip.show)  // Show tooltip on mouseover

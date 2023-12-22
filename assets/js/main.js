@@ -71,7 +71,7 @@
 			var scrollPosition = $window.scrollTop();
 		
 			// Change header color based on scroll position (adjust the nb of pixels).
-			if (scrollPosition > 1300) {
+			if (scrollPosition > 1400) {
 			$header.addClass('scrolled');
 			} else {
 			$header.removeClass('scrolled');
