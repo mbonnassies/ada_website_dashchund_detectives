@@ -50,25 +50,47 @@
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
+								<p><span class="image left" style="max-width: 200px;"><img src="images/disco.png" alt="" /></span>
+									
+									Are you ready to look into all the facettes of genres? Learn about how many movie genres actually exist and what topics shine in witch genre? Then come along, Barbie will take your hand and lead your first dance...</p>
 
 
 
-								<hr />
-
-
-
+								
 								<h4>Research Questions</h4>
 								<p>The first part of our analysis relates to the genre analysis. The following research questions are to be answered:<br>
 									<ul>
-										<li>XXXXXXXXX</li>
-										<li>XXXXXXX</li>
-										<li>XXXXXXXXXX</li>
-									  </ul></p>
-							
-									  <hr />
+										<li>Do Barbie's and Oppenheiemer’s plots differ enough from one another to draw a clear line of differnentiation?</li>
+										<li>How accurately do the two movies belong to their respective genres?</li>
+										<li>Can trends be discovered when looking into the sentiment of movies, thir grossing, ratings and number of ratings?</li>
+									</ul></p>
 
-								<p>Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui, at vestibulum sit amet, auctor bibendum neque.</p>
-								<h4>Character Analysis</h4>
+								<hr />
+								<h3>LDA Technique</h3>
+									<p>LDA and plot analysis:
+										When constructing our barbie/oppenheimer datasets (plots and movie data), we realized one thing: each movie has too many genres associated with it according to google. We therefore decided to use latent dirichelet allocation to guess how likely are each movie to fall within the categories: drama, comedy, thriller, fantasy, adventure and war.
+										We first decided to train another model on the entire dataset in which we decided to look for 28 topics (assuming 4 for each of the most famous genres: drama, comedy, romance, action, thriller, horror, adventure)
+										The topics obtained were clear with few overlap. 
+										We then decided to train 6 models looking for 6 topic each only genre specific plots (adventure, comedy, drama, war , fantasy and thriller) which we thought would be interesting genres to look at (especially since Oppenheimer is categorized as a drama, biography on imdb whereas barbie is a comedie, fantasy, adventure).</p>
+										<p>Here is a light and breezy example of how the different extracted topics look like for the Comedy genre. If you wish to learn more about the other genre's topics and the methods used to conduct this section's analysis visit our <a href=moreinfo.html>More Info</a> page.</p>
+										<div class="col-12"><span class="image fit"><img src="images/comedy-topics.jpeg" alt="" /></span></div>
+								<hr />
+							
+								<h4>Now to the actual Analysis</h4>
+								<p><span class="image right" style="max-width: 300px;"><img src="images/dancing-bo.png" alt="" /></span>If you have seen the movies you could have guessed it: The distributions of probability are really interesting. Barbie and Oppenheimer seem to have quite different distributions across the board.</p>
+								<p>In terms of <b>Comedy</b>: comedy itself is a rather weird genre since it is situational rather than action based (physical comedy could be the same as action without any context). Nonetheless, it seems that Barbie and Oppenheimer belong to different types of comedy: Barbie's comedy is more adventurous (topics 1 and 3) whereas Oppenheimer is in a more professional setting (work/school setting with a nice aspect of decision to be made (topics 4,5)).</p>
+								<p>In terms of <b>Fantasy</b> we are a bit surprised: it seems that Oppenheimer coincides with more sci-fi like fantasy (topic 2) whereas Barbie is more even across the board. This would make sense since Barbie is more of a realist fantasy (no mythical creatures and Barbieland itself is a reflection of reality with different societal dynamics.</p>
+								<p><b>Adventure</b> is a genre that suffered from our dataset. When running an LDA on adventure movies, we first noticed that some topics put great emphasis on tropical locations which makes sense because adventure makes us think of ruin exploration (Indiana Jones) or treasure hunting with pirates.Topic 3 in adventure is very urban and city based which would make sense for it to score high in both movies. Still, Barbie does show other aspects of adventure, especially the relational aspect (topic 4) and does not fare too badly in naval adventure (topic 2).</p>
+								<p><span class="image left" style="max-width: 200px;"><img src="images/bright-oppenheimer2.png" alt="" /></span>Blinded by the bright pink and light topics of Barbie? Don't worry, Oppenheimer will take it from here... The next genres might just be a bit darker. </p>
+								<p><b>Drama</b> is of utmost interest: Barbie coincides with drama on the relational aspect (involvement of related entities, Barbie/Ken interactions and Barbie/Barbie friendships) but Opppenheimer coincides with a thriller/crime ridden drama which makes sense since the movie contains a juridic trial.</p>
+								<p><b>Action</b> and war were investigated as a bonus, Barbie is quite a dynamic movie, it is action packed but not too much. At least not enough to be considered an action movie by ImDB. Oppenheimer is a fairly still movie but it does check the destructive and conflictual aspect of action. For war, both movie plots contain part of the war lexicon. Barbie contains the marine related one whereas Oppenheimer is duty and naval offense.</p>
+								<p>Overall, the analysis was really revealing: Barbie and Oppenheimer are fundamentally different where Oppenheimer specializes in drama and does it really well. Barbie on the other hand offers a twist on previous comedy, adventure and fantasy formulas by taking aspects of each genre and innovating enough to become its own category. Overall, we believe Barbie prevailed due its dynamicity.</p>
+								<p>Maybe you share some character traits with Oppenheimer and would like to see the plots, here you go:</p>
+								<div class="col-12"><span class="image fit"><img src="images/Oppenheimer-prob-dens.jpeg" alt="" /></span></div>
+								<div class="col-12"><span class="image fit"><img src="images/Barbie-prob-dens.jpeg" alt="" /></span></div>
+								<p>Note that the above hints at another potential problem: change in genres throughout times and the reception of those changes by viewers. Genres evolve similarly to society and what is popular now may not be popular later as such we decided to not consider fantasy in our analysis and to just compare dramas vs comedy/adventures.</p>
+
+								<hr />
 								<p>Now that we've explored a fusion of genre and character analysis, this next <a href=causalityanalysis.html>Causality Analysis</a> will put the pieces of the puzzle together.</p>
 							</section>
 							</div>
