@@ -121,6 +121,31 @@ svg.call(tip);
       .attr("stroke", "white")
       .on('mouseover', tip.show)  // Show tooltip on mouseover
       .on('mouseout', tip.hide);  // Hide tooltip on mouseout
+  
+  var dataPoints = [
+    {Movie_box_office_revenue: 1442000000, averageRating: 7, diversity_count: "4", color: "#b22178", name:'Barbie'},
+    {Movie_box_office_revenue: 953200000, averageRating: 8.4, diversity_count: "2", color: "#1b1b1b", name: 'Oppenheimer'}
+  ];
+
+  dataPoints.forEach(function(d) {
+    svg.append("circle")
+      .attr("cx", x(d.diversity_count) + x.bandwidth()/2)
+      .attr("cy", y(d.Movie_box_office_revenue))
+      .attr("r", 3)
+      .style("fill", d.color)
+      .style("opacity", 1)
+      .style("stroke", "white")
+      .on('mouseover', tip.show)  // Show tooltip on mouseover
+      .on('mouseout', tip.hide);  // Hide tooltip on mouseout
+    svg.append("text")
+      .attr("x", x(d.diversity_count) + x.bandwidth()/2)
+      .attr("y", y(d.Movie_box_office_revenue) - 12)
+      .text(d.name)  // Set the text to the averageRating value
+      .attr("font-size", "10px")
+      .attr("dx", "-.8em")
+      .attr("dy", ".35em")
+      .style("fill", "black");
+  });
 
   // Add labels
   svg.append("text")
