@@ -54,7 +54,7 @@
 							<div class="inner">
 
 								<p><span class="image right" style="max-width: 300px;"><img src="images/ken-beach.png" alt="" /></span>Don’t worry, we’ve reached the final part of our analysis: soon you can go back to beach, not surfing, just BEACH…</p>
-								<p>Building up on our previous plots and analyses on genre and character types, we now want to acknowledge the reliability of our data comparisons. This is why we are performing a causality analysis.</p>
+								<p align="justify">Building up on our previous plots and analyses on genre and character types, we now want to acknowledge the reliability of our data comparisons. This is why we are performing a causality analysis.</p>
 								<h4>Research Question</h4>
 								<p>In this section we'll discuss the following question:<br>
 									<ul>
@@ -64,7 +64,7 @@
 							
 								<hr />
 								<h3>How do we define success?</h3>
-								<p>We have identified two main indicators of the success of a movie. First, the average rating of the movie provided by IMDb, that should represent the popular opinion about this movie.
+								<p align="justify">We have identified two main indicators of the success of a movie. First, the average rating of the movie provided by IMDb, that should represent the popular opinion about this movie.
 								However, unless they have a strong opinion about a movie, most people don't take the time to express their views and therefore, the ratings might not be the perfect representation.
 								The second indicator is the Box Office Revenue, as success could be defined by how popular the movie is. One could also argue that some genres are more popular than other and would gross more,
 								and therefore doesn't give an idea of the quality of the movie. We decided to measure if ratings and grossing were correlated in some ways. For that, we
@@ -81,34 +81,34 @@
 								<figure>
 									<img src="images/cast-bo.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
 								</figure>
-								<p>We decided to group the data manually into broader ethnic groups for more meaningful conculsions. The following histogram portrays the ethnicities of all actors in the movies dataset. First and foremost, we can see that caucasians make up the vast majority of actors (e.g., Margot Robbie as Barbie, Ryan Gosling as Ken and Cillian Murphy as Robert J. Oppenheimer), followed by african, and  other ethnicities, who are in the minority. </p> 
+								<p align="justify">We decided to group the data manually into broader ethnic groups for more meaningful conculsions. The following histogram portrays the ethnicities of all actors in the movies dataset. First and foremost, we can see that caucasians make up the vast majority of actors (e.g., Margot Robbie as Barbie, Ryan Gosling as Ken and Cillian Murphy as Robert J. Oppenheimer), followed by african, and  other ethnicities, who are in the minority. </p> 
 								<div style="text-align: center; vertical-align: middle;" id="ethnicities_occurence"></div>
-								<p>We decided to see if diversity, measured by the number of different ethnicities in a movie, had an impact on the success of that movie.
+								<p align="justify">We decided to see if diversity, measured by the number of different ethnicities in a movie, had an impact on the success of that movie.
 								The first violin plot tests the comparison of the number of different ethnicities in a movie and the revenue generated from the movie. What is observed is that as the number of ethnicities increases, the movie tends towards a higher revenue.
 								We can also notice that the data is unevenly distributed, as most movies have maximum of three different ethnic groups. We computed a linear regression and found a slope of \(\beta_1 = 3.33 \cdot 10^7\) and an intercept of \(\beta_0 = 2.37 \cdot 10^7\), with a p-value of \(p = 3.36 \cdot 10^{-214}\) and \(R^2 = 0.033\). Once again, the low p-value combined with a low R-squared value indicate a weak correlation between both parameters.</p>
 								<div style="text-align: center; vertical-align: middle;" id="grossing_vs_diversity"></div>
-								<p>The second plot compares the movie rating to the number of different ethnicities:</p>
+								<p align="justify">The second plot compares the movie rating to the number of different ethnicities:</p>
 								<div style="text-align: center; vertical-align: middle;" id="rating_vs_diversity"></div>
-								<p>Again, by disregarding the outliers stemming from movies with five or six different ethnicities, we observe that the ratings maintain similar ratings, thus reinforcing that the number of diversity does not impact movie ratings. The linear regression yields \(\beta_1 = -0.12\) and an intercept of \(\beta_0 = 6.62\), with a p-value of \(p = 6.26 \cdot 10^{-66}\) and \(R^2 = 0.010\), giving an even weaker correlation since R-squared is very low and the slope is almost null.</p>
+								<p align="justify">Again, by disregarding the outliers stemming from movies with five or six different ethnicities, we observe that the ratings maintain similar ratings, thus reinforcing that the number of diversity does not impact movie ratings. The linear regression yields \(\beta_1 = -0.12\) and an intercept of \(\beta_0 = 6.62\), with a p-value of \(p = 6.26 \cdot 10^{-66}\) and \(R^2 = 0.010\), giving an even weaker correlation since R-squared is very low and the slope is almost null.</p>
 								
 								<h3>Let's compare ethnic groups!</h3>
-								<p>We decided to measure the effect of the ethnicities of the cast in a movie. We previously looked at the diversity, let's now find out about ethnicity. Since the distribution of ethnicities is very skewed, a Kruskal-Wallis test was conducted to fortify the analysis for both Box Office Revenue and Ratings, and the p-values found are respectively \(p = 7.61 \cdot 10^{-11}\) for Revenues, and \(p = 9.22 \cdot 10^{-42}\) for Ratings. 
+								<p align="justify">We decided to measure the effect of the ethnicities of the cast in a movie. We previously looked at the diversity, let's now find out about ethnicity. Since the distribution of ethnicities is very skewed, a Kruskal-Wallis test was conducted to fortify the analysis for both Box Office Revenue and Ratings, and the p-values found are respectively \(p = 7.61 \cdot 10^{-11}\) for Revenues, and \(p = 9.22 \cdot 10^{-42}\) for Ratings. 
 								This allows to test if we can reject the null hypothesis: all ethnic groups have the same median revenue/rating. Since the p-values are very low, we conclude that the ethnicities do not all have the same revenue, and this can be observed through the interactive box plot.</p>
 								<div style="text-align: center; vertical-align: middle;" id="grossing_vs_ethnicity"></div>
-								<p>For Movie rating versus different ethnicities, we also came up with the conclusion that different ethnicities do not have the same ratings.
+								<p align="justify">For Movie rating versus different ethnicities, we also came up with the conclusion that different ethnicities do not have the same ratings.
 								<div style="text-align: center; vertical-align: middle;" id="rating_vs_ethnicity"></div>
 								We can observe that the repartition of ethnicities is skewed, as there are much much caucasians as opposed to other ethnicities. The Kruskal-Wallis test is non-sensitive to the distribution of the data, however it is a non-parametric test and only give us the information that at least one category doesn’t have the same median, but we do not know how many and which ones.</p>
 								
 								<h3>What about release years?</h3>
-								<p>Remember Barbenheimer? Fun fact: they were both released on the same day, the 21st of July 2023 (in the USA)! Was it a tough decision for you which one to watch first or did you have a preference from the start?</p>
+								<p align="justify">Remember Barbenheimer? Fun fact: they were both released on the same day, the 21st of July 2023 (in the USA)! Was it a tough decision for you which one to watch first or did you have a preference from the start?</p>
 								<figure>
 									<img src="images/release-date.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
 								</figure>
-								<p>To continue our investigation on the factors of success, we can look at the influence of the realease year over Box Office Revenue and Ratings. 
+								<p align="justify">To continue our investigation on the factors of success, we can look at the influence of the realease year over Box Office Revenue and Ratings. 
 								The following scatter plot compares the Revenue of a movie to the release year. We computed a linear regression and got the following results: \(\beta_1 = 1.06 \cdot 10^6\) and an intercept of \(\beta_0 = -2.06 \cdot 10^9\), with a p-value of \(p = 2.25 \cdot 10^{-65}\) and \(R^2 = 0.034\). The conclusion remains the same, there is a weak correlation between Revenues and Release Year. This might be due to many different factors (inflation, popularity of cinema).</p>
 								<div style="text-align: center; vertical-align: middle;" id="grossing_vs_release_year"></div>
 
-								<p>Finally, we can compare the ratings of movies to their release year. We computed a linear regression and got the following results: \(\beta_1 = -0.0009\) and an intercept of \(\beta_0 = 7.95\), with a p-value of \(p = 4.99 \cdot 10^{-7}\) and \(R^2 = 4.2 \cdot 10^{-4}\). The value of the slope indicates that there is almost no correlation between Ratings and Release Year. This can be due to the fact that ratings can be submitted anytime so the effect of time isn't as strong as it is for revenues.</p>
+								<p align="justify">Finally, we can compare the ratings of movies to their release year. We computed a linear regression and got the following results: \(\beta_1 = -0.0009\) and an intercept of \(\beta_0 = 7.95\), with a p-value of \(p = 4.99 \cdot 10^{-7}\) and \(R^2 = 4.2 \cdot 10^{-4}\). The value of the slope indicates that there is almost no correlation between Ratings and Release Year. This can be due to the fact that ratings can be submitted anytime so the effect of time isn't as strong as it is for revenues.</p>
 								
 								<div style="text-align: center; vertical-align: middle;" id="rating_vs_release_year"></div>
 								What is observable is that the grossing increases throughout the years and the ratings have remained even.
@@ -118,18 +118,18 @@
 								<figure>
 									<img src="images/difference-bo.jpg" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
 								</figure>
-								<p>What is the biggest difference between Barbie and Oppenheimer? That's right, personality. In our endless search for factors of success, we will now use the results from the MBTI analysis to determine if having extroverted characters boost the Ratings and Revenues.</p>
+								<p align="justify">What is the biggest difference between Barbie and Oppenheimer? That's right, personality. In our endless search for factors of success, we will now use the results from the MBTI analysis to determine if having extroverted characters boost the Ratings and Revenues.</p>
 								Let's first look at the plot of Ratings against the proportion of extroverted characters in a movie. Here we have both a barplot with 95% confidence intervals and a scatter plot of all the data points. Looking at the bar plot we may think that there is lower rating as extroversion proportion increases but running a Chi-squared test returns a p-value of 0.2328 showing that the differences in average ratings are not statistically significant.</p>
 								<figure>
 									<img src="images/bar_plot_averageRating.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
 								</figure>
-								<p><div style="text-align: center; vertical-align: middle;" id="ratings_vs_extro"></div>
+								<p align="justify"><div style="text-align: center; vertical-align: middle;" id="ratings_vs_extro"></div>
 								At first sight, it seems that movies with extroverted characters might have slightly worse ratings than movies with introverted characters. The correlation, if it exists, would be weak. 
 								Let's now try pair matching to eliminate covariates and draw meaningful conclusions. We matched movies along many parameters, such as genre, release year, number of characters, number of votes for rating. Since the proportion of extroverted characters is not a binary variable, we also matched movies with the same proportion of one type so that we require "in a pair, movie 1 has as many extroverted characters as movie 2 has extroverted characters".
 								We used a mix of methods, exact matching when possible (eg. number of characters) and also propensity score matching (number of votes, release year). 
 								</p>
-								<p>After performing the linear regression we obtain a slope coefficient of -0.2232 which isn't a very strong correlation and the p-value for it is 0.042 which makes the result statistically significant. However we do notice the R-squared value of 0.005 is extremely low which means that extroverted proportion explains almost none of the variance in average rating.
-								On the scatter plot below which shows only the paired movies we see that there is still no trend that appears which means there could possibly be even more covariates that we did not take into account. We also see in the bar plot that there is still no trend appearing in the data.
+								<p align="justify">After performing the linear regression we obtain a slope coefficient of -0.2232 which isn't a very strong correlation and the p-value for it is 0.042 which makes the result statistically significant. However we do notice the R-squared value of 0.005 is extremely low which means that extroverted proportion explains almost none of the variance in average rating.
+								On the scatter plot below, which shows only the paired movies, we see that there is still no trend that appears, meaning there could possibly be even more covariates that we did not take into account. We also see in the bar plot that there is still no trend appearing in the data.
 								</p>
 								<figure>
 									<img src="images/scatter_plot_averageRating_extro_paired.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
@@ -137,8 +137,8 @@
 								<figure>
 									<img src="images/bar_plot_averageRating_paired.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
 								</figure>
-								<p>Once again if we look at the bar plot and run a Chi-squared test we see that the differences in average ratings is not statistically significant so we cannot reject the null hypothesis which is that average rating is the same for all bins.</p>
-								<p>Now, of course, when pairing datapoints together we have to check the balance between our treatment and control groups which is validated by the plots below.</p>
+								<p align="justify">Once again if we look at the bar plot and run a Chi-squared test we see that the differences in average ratings is not statistically significant so we cannot reject the null hypothesis which is that average rating is the same for all bins.</p>
+								<p align="justify">Now of course, when pairing datapoints together, we have to check the balance between our treatment and control groups. This is validated by the plots below.</p>
 								<figure>
 									<img src="images/balance_number_of_characters.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
 								</figure>
@@ -148,22 +148,10 @@
 								<figure>
 									<img src="images/balance_release_year.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
 								</figure>
-								<p></p>
+
 								<hr />
 
 								<h3>We're almost finished! <a href="conclusion.html">CLICK HERE FOR THE FINAL CONCLUSION</a></h3>
-								<figure>
-									<img src="images/difference-bo.jpg" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
-								</figure>
-								<p>What is the biggest difference between Barbie and Oppenheimer? That's right, personality. In our endless search for factors of success, we will now use the results from the MBTI analysis to determine if having extroverted characters boost the Ratings and Revenues.</p>
-								Let's first look at the plot of Ratings against the proportion of extroverted characters in a movie:</p>
-								<p><div style="text-align: center; vertical-align: middle;" id="ratings_vs_extro"></div>
-								At first sight, it seems that movies with extroverted characters might have slightly worse ratings than movies with introverted characters. The correlation, if it exists, would be weak. 
-								Let's now try pair matching to eliminate covariates and draw meaningful conclusions. We matched movies along many parameters, such as genre, release year, number of characters, number of votes for rating. Since the proportion of extroverted characters is not a binairy variable, we also matched movies with the same proportion of one type so that we will just be testing the binairy condition "has more extroverted characters than introverted characters".
-								Since we don't have that much data, we did not perform exact matching but rather propensity score matching using the mentionned parameters. 
-								</p>
-								<p></p>
-							
 
 							</div>
 						</section>
