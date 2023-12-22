@@ -64,17 +64,17 @@ d3.csv("data/ethnicities_analysis.csv", function(data) {
 
   // Define the gradient
   var gradient = svg3.append("defs")
-  .append("linearGradient")
-  .attr("id", "boxGradient")
-  .attr("gradientTransform", "rotate(90)");
+    .append("linearGradient")
+    .attr("id", "boxGradient")
+    .attr("gradientTransform", "rotate(90)");
 
   gradient.append("stop")
-  .attr("offset", "0%")
-  .attr("stop-color", "#b2df8a");
+    .attr("offset", "0%")
+    .attr("stop-color", "#ff41ba"); // Hot pink color for Barbie
 
   gradient.append("stop")
-  .attr("offset", "100%")
-  .attr("stop-color", "#1f78b4");
+    .attr("offset", "100%")
+    .attr("stop-color", "#3d2900"); // Dark grey color for Oppenheimer
 
 
   // Show the main vertical line
