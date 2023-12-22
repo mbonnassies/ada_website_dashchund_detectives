@@ -119,12 +119,35 @@
 									<img src="images/difference-bo.jpg" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
 								</figure>
 								<p>What is the biggest difference between Barbie and Oppenheimer? That's right, personality. In our endless search for factors of success, we will now use the results from the MBTI analysis to determine if having extroverted characters boost the Ratings and Revenues.</p>
-								Let's first look at the plot of Ratings against the proportion of extroverted characters in a movie:</p>
+								Let's first look at the plot of Ratings against the proportion of extroverted characters in a movie. Here we have both a barplot with 95% confidence intervals and a scatter plot of all the data points. Looking at the bar plot we may think that there is lower rating as extroversion proportion increases but running a Chi-squared test returns a p-value of 0.2328 showing that the differences in average ratings are not statistically significant.</p>
+								<figure>
+									<img src="images/bar_plot_averageRating.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
+								</figure>
 								<p><div style="text-align: center; vertical-align: middle;" id="ratings_vs_extro"></div>
 								At first sight, it seems that movies with extroverted characters might have slightly worse ratings than movies with introverted characters. The correlation, if it exists, would be weak. 
-								Let's now try pair matching to eliminate covariates and draw meaningful conclusions. We matched movies along many parameters, such as genre, release year, number of characters, number of votes for rating. Since the proportion of extroverted characters is not a binairy variable, we also matched movies with the same proportion of one type so that we will just be testing the binairy condition "has more extroverted characters than introverted characters".
-								Since we don't have that much data, we did not perform exact matching but rather propensity score matching using the mentionned parameters. 
+								Let's now try pair matching to eliminate covariates and draw meaningful conclusions. We matched movies along many parameters, such as genre, release year, number of characters, number of votes for rating. Since the proportion of extroverted characters is not a binary variable, we also matched movies with the same proportion of one type so that we require "in a pair, movie 1 has as many extroverted characters as movie 2 has extroverted characters".
+								We used a mix of methods, exact matching when possible (eg. number of characters) and also propensity score matching (number of votes, release year). 
 								</p>
+								<p>After performing the linear regression we obtain a slope coefficient of -0.2232 which isn't a very strong correlation and the p-value for it is 0.042 which makes the result statistically significant. However we do notice the R-squared value of 0.005 is extremely low which means that extroverted proportion explains almost none of the variance in average rating.
+								On the scatter plot below which shows only the paired movies we see that there is still no trend that appears which means there could possibly be even more covariates that we did not take into account. We also see in the bar plot that there is still no trend appearing in the data.
+								</p>
+								<figure>
+									<img src="images/scatter_plot_averageRating_extro_paired.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
+								</figure>
+								<figure>
+									<img src="images/bar_plot_averageRating_paired.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
+								</figure>
+								<p>Once again if we look at the bar plot and run a Chi-squared test we see that the differences in average ratings is not statistically significant so we cannot reject the null hypothesis which is that average rating is the same for all bins.</p>
+								<p>Now, of course, when pairing datapoints together we have to check the balance between our treatment and control groups which is validated by the plots below.</p>
+								<figure>
+									<img src="images/balance_number_of_characters.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
+								</figure>
+								<figure>
+									<img src="images/balance_number_of_votes.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
+								</figure>
+								<figure>
+									<img src="images/balance_release_year.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
+								</figure>
 								<p></p>
 								<hr />
 
