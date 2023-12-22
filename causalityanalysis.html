@@ -54,7 +54,7 @@
 						<section class="wrapper style5">
 							<div class="inner">
 
-								<p><span class="image right" style="max-width: 300px;"><img src="images/ken-beach.png" alt="" /></span>Don’t worry, we’ve reached the final part of our analysis: Soon you can go back to beach, not surfing, just BEACH…</p>
+								<p><span class="image right" style="max-width: 300px;"><img src="images/ken-beach.png" alt="" /></span>Don’t worry, we’ve reached the final part of our analysis: soon you can go back to beach, not surfing, just BEACH…</p>
 								<p>Building up on our previous plots and analyses on genre and character types, we now want to acknowledge the reliability of our data comparisons. This is why we are performing a causality analysis.</p>
 								<h4>Research Questions</h4>
 								<p>These were the following questions identified that we aimed to discuss in this section:<br>
@@ -113,6 +113,16 @@
 
 								<h3>Do characters archetype affect the popularity?</h3>
 
+								<p>What is the biggest difference between Barbie and Oppenheimer? That's right, personality. In our endless search for factors of success, we will now use the results from the MBTI analysis to determine if having extroverted characters boost the Ratings and Revenues.</p>
+								Let's first look at the plot of Ratings against the proportion of extroverted characters in a movie:</p>
+								<p><div style="text-align: center; vertical-align: middle;" id="ratings_vs_extro"></div>
+								At first sight, it seems that movies with extroverted characters might have slightly worse ratings than movies with introverted characters. The correlation, if it exists, would be weak. 
+								Let's now try pair matching to eliminate covariates and draw meaningful conclusions. We matched movies along many parameters, such as genre, release year, number of characters, number of votes for rating. Since the proportion of extroverted characters is not a binairy variable, we also matched movies with the same proportion of one type so that we will just be testing the binairy condition "has more extroverted characters than introverted characters".
+								Since we don't have that much data, we did not perform exact matching but rather propensity score matching using the mentionned parameters. 
+								</p>
+								<p></p>
+							
+
 							</div>
 						</section>
 					</article>
@@ -147,6 +157,7 @@
 		<script src="assets/js/plots/ethnicities_occurence.js"></script>
 		<script src="assets/js/plots/movies_per_year.js"></script>
 		<script src="assets/js/plots/genre_vs_mbti.js"></script>
+		<script src="assets/js/plots/rating_vs_extro.js"></script>
 
 
 

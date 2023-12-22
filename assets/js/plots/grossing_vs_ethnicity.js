@@ -70,11 +70,11 @@ d3.csv("data/ethnicities_analysis.csv", function(data) {
 
   gradient.append("stop")
     .attr("offset", "0%")
-    .attr("stop-color", "#ff41ba"); // Hot pink color for Barbie
+    .attr("stop-color", "#1f78b4");
 
   gradient.append("stop")
     .attr("offset", "100%")
-    .attr("stop-color", "#3d2900"); // Dark grey color for Oppenheimer
+    .attr("stop-color", "#b2df8a");
 
 
   // Show the main vertical line
