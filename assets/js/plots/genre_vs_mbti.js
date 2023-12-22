@@ -40,6 +40,14 @@ var y = d3.scaleBand()
 svg9.append("g")
   .call(d3.axisLeft(y));
 
+// Chart title
+svg9.append("text")
+.attr("x", width6 / 2)
+.attr("y", 0 - (margin6.top / 2))
+.attr("text-anchor", "middle")
+.style("font-size", "16px")
+.text("MBTI Type Occurences in Normalized Genres");
+
 //Read the data
 d3.csv("data/genres_mbti.csv", function(data) {
 
