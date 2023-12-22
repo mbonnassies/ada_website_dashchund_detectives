@@ -120,7 +120,10 @@
 								Let's now try pair matching to eliminate covariates and draw meaningful conclusions. We matched movies along many parameters, such as genre, release year, number of characters, number of votes for rating. Since the proportion of extroverted characters is not a binairy variable, we also matched movies with the same proportion of one type so that we will just be testing the binairy condition "has more extroverted characters than introverted characters".
 								Since we don't have that much data, we did not perform exact matching but rather propensity score matching using the mentionned parameters. 
 								</p>
-								<p></p>
+								<p>
+									<div style="text-align: center; vertical-align: middle;" id="characters_per_group"></div>
+									<div style="text-align: center; vertical-align: middle;" id="year_per_group"></div>
+								</p>
 							
 
 							</div>
@@ -158,6 +161,8 @@
 		<script src="assets/js/plots/movies_per_year.js"></script>
 		<script src="assets/js/plots/genre_vs_mbti.js"></script>
 		<script src="assets/js/plots/rating_vs_extro.js"></script>
+		<script src="assets/js/plots/characters_per_group.js"></script>
+		<script src="assets/js/plots/year_per_group.js"></script>
 
 
 
