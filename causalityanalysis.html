@@ -66,7 +66,7 @@
 								<h3>How do we define success?</h3>
 								<p align="justify">We have identified two main indicators of the success of a movie. First, the average rating of the movie provided by IMDb, that should represent the popular opinion about this movie.
 								However, unless they have a strong opinion about a movie, most people don't take the time to express their views and therefore, the ratings might not be the perfect representation.
-								The second indicator is the Box Office Revenue, as success could be defined by how popular the movie is. One could also argue that some genres are more popular than other and would gross more,
+								The second indicator is the Box Office Revenue, as success could be defined by how popular the movie is. One could also argue that some genres are more popular than others and would gross more,
 								and therefore doesn't give an idea of the quality of the movie. We decided to measure if ratings and grossing were correlated in some ways. For that, we
 								conducted a linear regression on our data and found the following results:<br>
 								
@@ -81,11 +81,11 @@
 								<figure>
 									<img src="images/cast-bo.png" style="max-height: 1000%; max-width: 100%; height: auto; width: auto;">
 								</figure>
-								<p align="justify">We decided to group the data manually into broader ethnic groups for more meaningful conculsions. The following histogram portrays the ethnicities of all actors in the movies dataset. First and foremost, we can see that caucasians make up the vast majority of actors (e.g., Margot Robbie as Barbie, Ryan Gosling as Ken and Cillian Murphy as Robert J. Oppenheimer), followed by african, and  other ethnicities, who are in the minority. </p> 
+								<p align="justify">We decided to group the data manually into broader ethnic groups for more meaningful conclusions. The following histogram portrays the ethnicities of all actors in the movies dataset. First and foremost, we can see that caucasians make up the vast majority of actors (e.g., Margot Robbie as Barbie, Ryan Gosling as Ken and Cillian Murphy as Robert J. Oppenheimer), followed by african, and  other ethnicities, who are in the minority. </p> 
 								<div style="text-align: center; vertical-align: middle;" id="ethnicities_occurence"></div>
 								<p align="justify">We decided to see if diversity, measured by the number of different ethnicities in a movie, had an impact on the success of that movie.
 								The first violin plot tests the comparison of the number of different ethnicities in a movie and the revenue generated from the movie. What is observed is that as the number of ethnicities increases, the movie tends towards a higher revenue.
-								We can also notice that the data is unevenly distributed, as most movies have maximum of three different ethnic groups. We computed a linear regression and found a slope of \(\beta_1 = 3.33 \cdot 10^7\) and an intercept of \(\beta_0 = 2.37 \cdot 10^7\), with a p-value of \(p = 3.36 \cdot 10^{-214}\) and \(R^2 = 0.033\). Once again, the low p-value combined with a low R-squared value indicate a weak correlation between both parameters.</p>
+								We can also notice that the data is unevenly distributed, as most movies have a maximum of three different ethnic groups. We computed a linear regression and found a slope of \(\beta_1 = 3.33 \cdot 10^7\) and an intercept of \(\beta_0 = 2.37 \cdot 10^7\), with a p-value of \(p = 3.36 \cdot 10^{-214}\) and \(R^2 = 0.033\). Once again, the low p-value combined with a low R-squared value indicate a weak correlation between both parameters.</p>
 								<div style="text-align: center; vertical-align: middle;" id="grossing_vs_diversity"></div>
 								<p align="justify">The second plot compares the movie rating to the number of different ethnicities:</p>
 								<div style="text-align: center; vertical-align: middle;" id="rating_vs_diversity"></div>
@@ -97,7 +97,7 @@
 								<div style="text-align: center; vertical-align: middle;" id="grossing_vs_ethnicity"></div>
 								<p align="justify">For Movie rating versus different ethnicities, we also came up with the conclusion that different ethnicities do not have the same ratings.
 								<div style="text-align: center; vertical-align: middle;" id="rating_vs_ethnicity"></div>
-								We can observe that the repartition of ethnicities is skewed, as there are much much caucasians as opposed to other ethnicities. The Kruskal-Wallis test is non-sensitive to the distribution of the data, however it is a non-parametric test and only give us the information that at least one category doesn’t have the same median, but we do not know how many and which ones.</p>
+								We can observe that the repartition of ethnicities is skewed, as there are much more caucasians as opposed to other ethnicities. The Kruskal-Wallis test is non-sensitive to the distribution of the data, however it is a non-parametric test and only give us the information that at least one category doesn’t have the same median, but we do not know how many and which ones.</p>
 								
 								<h3>What about release years?</h3>
 								<p align="justify">Remember Barbenheimer? Fun fact: they were both released on the same day, the 21st of July 2023 (in the USA)! Was it a tough decision for you which one to watch first or did you have a preference from the start?</p>
