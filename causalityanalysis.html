@@ -14,6 +14,8 @@
 		<script src="https://d3js.org/d3.v4.min.js"></script>
 		<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 		<script src="https://d3-legend.susielu.com/d3-legend.min.js"></script>
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+		<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 		<link rel="stylesheet" href="assets/css/styles.css">
 	</head>
 	<body class="is-preload">
@@ -63,31 +65,53 @@
 									  </ul></p>
 							
 								<hr />
-								<h3>Ethnic vs actors</h3>
-								<p>The following histogram portrays the ethnicities of all actors in the movies dataset. We can observe first and foremost that caucasians represent the large majority of the actors, followed by african, and then trailing with other ethnicities in low minority.</p> 
-								<div id="ethnicities_occurence"></div>
-								<h3>Ethnic vs actors</h3>
-								<p>The first scatter plot coupled with a probability density distribution tests the comparison of the number of different ethnicities in a movie and the revenue generated from the movie. What is observed is that as the number of ethnicities increases, the movie tends towards a higher revenue. However, not much can be concluded, since there is visibly a much larger amount of movies with less ethnicities than there is with over 3 ethnicities. Once the plot reaches 5 to 6 different ethnicities, the data becomes less reliable.</p>
-								<div id="grossing_vs_diversity"></div>
-								<h3>Average Movie Ratings versus the Number of Different Ethnicities</h3>
-								<p>The second plot compares the movie rating to the number of different ethnicities. Again, by disregarding the outliers stemming from movies with 5 and 6 different ethnicities, we observe that the ratings maintain similar ratings, thus reinforcing that the number of diversity does not impact movie ratings.</p>
-								<div id="rating_vs_diversity"></div>
-								<h3>Box Plots</h3>
-								<p>Comparatively, box plots are presented for a more visual representation of the previous graphs. Since the distribution of ethnicities is very skewed, a Kruskal-Wallis test was conducted to fortify the analysis, and the p-value was  XXXX. This allows to test if we can reject the null hypothesis: all ethnic groups have the same median revenue. We see that the ethnicities do not all have the same revenue, and this can be observed through the interactive box plot.</p>
-								<div id="grossing_vs_ethnicity"></div>
-								<p>Movie rating versus different ethnicities was also compared through a box plot. We also conducted a Kruskal-Wallis test, and we came up with the following conclusion: different ethnicities do not have the same ratings, but we can observe that the repartition of ethnicities is skewed, as there are much much caucasians as opposed to other ethnicities. The Kruskal-Wallis test is non-sensitive to the distribution of the data, however it is a non-parametric test and only give us the information that at least one category doesn’t have the same median, but we do not know how many and which ones.</p>
-								<div id="rating_vs_ethnicity"></div>
-								<p>A scatter plot of the movie box office revenue versus the average rating depicts the link between box office revenue and rating. A regression was made - a low R-squared value of XXX and low p-test value of XXXX and a slope of XXXX. For every rating point added, there is 13mmillion grossing more? But the grossing is affected by other things and the rating does not affect the grossing as much.</p>
-								<div id="grossing_vs_rating"></div>
-								<p>The following scatter plot compares the average rating of a movie to the release year. What is observable is that the grossing increases throughout the years and the ratings have remained even.</p>
-								<div id="rating_vs_release_year"></div>
-								<div id="grossing_vs_release_year"></div>
-								<div id="movies_per_year"></div>
+								<h3>How do we define success?</h3>
+								<p>We have identified two main indicators of the success of a movie. First, the average rating of the movie provided by IMDb, that should represent the popular opinion about this movie.
+								However, unless they have a strong opinion about a movie, most people don't take the time to express their views and the ratings might not be the perfect representation.
+								The second indicator is the Box Office Revenue, as success could be defined by how popular the movie is. One could also argue that some genres are more popular than other and would gross more,
+								and therefore doesn't give an idea of the quality of the movie. We decided to measure if ratings and grossing were correlated in some ways. For that, we
+								conducted a linear regression on our data and found the following results:<br>
+								
+								<div style="text-align: center; vertical-align: middle;" id="grossing_vs_rating"></div>
+								
+								We found a slope of \(\beta_1 = 1.32 \cdot 10^7\) and an intercept of \(\beta_0 = -3.57 \cdot 10^7\), with a p-value of \(p = 6.64 \cdot 10^{-27}\). Since the p-value is much lower than 0.05, we 
+								conclude that ratings and grossing are somewhat correlated, and an increase of 1 point in ratings theoretically leads to an additional 13M$ grossing.
+								However, we also see that the R-squared value is very low (\(R^2 = 0.015\)), meaning that ratings do not explain much of the variance in revenues. We will therefore conduct our following analysis on both parameters.</p>
+								</p>
+
+								<h3>Analysis on diversity</h3>
+								
+								<p>We decided to group the data manually into broader ethnic groups for more meaningful conculsions. The following histogram portrays the ethnicities of all actors in the movies dataset. We can observe first and foremost that caucasians represent the large majority of the actors, followed by african, and then trailing with other ethnicities in low minority. </p> 
+								<div style="text-align: center; vertical-align: middle;" id="ethnicities_occurence"></div>
+								<p>We decided to see if diversity, measured by the number of different ethnicities in a movie, had an impact on the success of that movie.
+								The first violin plot tests the comparison of the number of different ethnicities in a movie and the revenue generated from the movie. What is observed is that as the number of ethnicities increases, the movie tends towards a higher revenue.
+								We can also notice that the data is unevenly distributed, as most movies have maximum 3 different ethnic groups. We computed a linear regression and found a slope of \(\beta_1 = 3.33 \cdot 10^7\) and an intercept of \(\beta_0 = 2.37 \cdot 10^7\), with a p-value of \(p = 3.36 \cdot 10^{-214}\) and \(R^2 = 0.033\). Once again, the low p-value combined with a low R-squared value indicate a weak correlation between both parameters.</p>
+								<div style="text-align: center; vertical-align: middle;" id="grossing_vs_diversity"></div>
+								<p>The second plot compares the movie rating to the number of different ethnicities:</p>
+								<div style="text-align: center; vertical-align: middle;" id="rating_vs_diversity"></div>
+								<p>Again, by disregarding the outliers stemming from movies with 5 and 6 different ethnicities, we observe that the ratings maintain similar ratings, thus reinforcing that the number of diversity does not impact movie ratings. The linear regression yields \(\beta_1 = -0.12\) and an intercept of \(\beta_0 = 6.62\), with a p-value of \(p = 6.26 \cdot 10^{-66}\) and \(R^2 = 0.010\), giving an even weaker correlation since R-squared is very low and the slope is almost null.</p>
+								
+								<h3>Let's compare ethic groups!</h3>
+								<p>We decided to measure the effect of the ethnicities of the cast in a movie. We previously looked at the diversity, let's now find out about ethnicity. Since the distribution of ethnicities is very skewed, a Kruskal-Wallis test was conducted to fortify the analysis for both Box Office Revenue and Ratings, and the p-values found are respectively \(p = 7.61 \cdot 10^{-11}\) for Revenues, and \(p = 9.22 \cdot 10^{-42}\) for Ratings. 
+								This allows to test if we can reject the null hypothesis: all ethnic groups have the same median revenue/rating. Since the p-values are very low, we conclude that the ethnicities do not all have the same revenue, and this can be observed through the interactive box plot.</p>
+								<div style="text-align: center; vertical-align: middle;" id="grossing_vs_ethnicity"></div>
+								<p>For Movie rating versus different ethnicities, we also came up with the conclusion that different ethnicities do not have the same ratings.
+								<div style="text-align: center; vertical-align: middle;" id="rating_vs_ethnicity"></div>
+								We can observe that the repartition of ethnicities is skewed, as there are much much caucasians as opposed to other ethnicities. The Kruskal-Wallis test is non-sensitive to the distribution of the data, however it is a non-parametric test and only give us the information that at least one category doesn’t have the same median, but we do not know how many and which ones.</p>
+								
+								<h3>What about release years?</h3>
+
+								<p>To continue our investigation on the factors of success, we can look at the influence of the realease year over Box Office Revenue and Ratings. 
+								The following scatter plot compares the Revenue of a movie to the release year. We computed a linear regression and got the following results: \(\beta_1 = 1.06 \cdot 10^6\) and an intercept of \(\beta_0 = -2.06 \cdot 10^9\), with a p-value of \(p = 2.25 \cdot 10^{-65}\) and \(R^2 = 0.034\). The conclusion remains the same, there is a weak correlation between Revenues and Release Year. This might be due to many different factors (inflation, popularity of cinema).</p>
+								<div style="text-align: center; vertical-align: middle;" id="grossing_vs_release_year"></div>
+
+								<p>Finally, we can compare the ratings of movies to their release year. We computed a linear regression and got the following results: \(\beta_1 = -0.0009\) and an intercept of \(\beta_0 = 7.95\), with a p-value of \(p = 4.99 \cdot 10^{-7}\) and \(R^2 = 4.2 \cdot 10^{-4}\). The value of the slope indicates that there is almost no correlation between Ratings and Release Year. This can be due to the fact that ratings can be submitted anytime so the effect of time isn't as strong as it is for revenues.</p>
+								
+								<div style="text-align: center; vertical-align: middle;" id="rating_vs_release_year"></div>
+								What is observable is that the grossing increases throughout the years and the ratings have remained even.
 								<hr />
 
-								
-
-								<p>Etiam iaculis nulla ipsum, et pharetra libero rhoncus ut. Phasellus rutrum cursus velit, eget condimentum nunc blandit vel. In at pulvinar lectus. Morbi diam ante, vulputate et imperdiet eget, fermentum non dolor. Ut eleifend sagittis tincidunt. Sed viverra commodo mi, ac rhoncus justo. Duis neque ligula, elementum ut enim vel, posuere finibus justo. Vivamus facilisis maximus nibh quis pulvinar. Quisque hendrerit in ipsum id tellus facilisis fermentum. Proin mauris dui, at vestibulum sit amet, auctor bibendum neque.</p>
+								<h3>Do characters archetype affect the popularity?</h3>
 
 							</div>
 						</section>
