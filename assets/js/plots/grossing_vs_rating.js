@@ -1,16 +1,16 @@
 // set the dimensions and margins of the graph
-var margin3 = {top: 30, right: 30, bottom: 40, left: 60},
-    width3 = 800 - margin3.left - margin3.right,
-    height3 = 500 - margin3.top - margin3.bottom;
+var margin9 = {top: 30, right: 30, bottom: 40, left: 60},
+    width9 = 800 - margin9.left - margin9.right,
+    height9 = 450 - margin9.top - margin9.bottom;
 
 // append the svg object to the body of the page
 var svg4 = d3.select("#grossing_vs_rating")
   .append("svg")
-    .attr("width", width3 + margin3.left + margin3.right)
-    .attr("height", height3 + margin3.top + margin3.bottom)
+    .attr("width", width9 + margin9.left + margin9.right)
+    .attr("height", height9 + margin9.top + margin9.bottom)
   .append("g")
     .attr("transform",
-          "translate(" + margin3.left + "," + margin3.top + ")");
+          "translate(" + margin9.left + "," + margin9.top + ")");
 
 //Read the data
 d3.tsv("data/movies.imdbrating.tsv", function(data) {
@@ -23,15 +23,15 @@ d3.tsv("data/movies.imdbrating.tsv", function(data) {
   // Add X axis
   var x = d3.scaleLinear()
     .domain([-0.5, 10])
-    .range([ 0, width3 ]);
+    .range([ 0, width9 ]);
   svg4.append("g")
-    .attr("transform", "translate(0," + height3 + ")")
+    .attr("transform", "translate(0," + height9 + ")")
     .call(d3.axisBottom(x));
 
   // Add Y axis
   var y = d3.scaleLog()
     .domain([10,4000000000])
-    .range([ height3, 0]);
+    .range([ height9, 0]);
   svg4.append("g")
     .call(d3.axisLeft(y));
 
@@ -96,24 +96,24 @@ d3.tsv("data/movies.imdbrating.tsv", function(data) {
 
   // Chart title
   svg4.append("text")
-    .attr("x", width3 / 2)
-    .attr("y", 0 - (margin3.top / 2))
+    .attr("x", width9 / 2)
+    .attr("y", 0 - (margin9.top / 2))
     .attr("text-anchor", "middle")
     .style("font-size", "16px")
     .text("Movie Box Office Revenue vs Average Rating");
 
   svg4.append("text")
     .attr("transform", "rotate(-90)")
-    .attr("y", 0 - margin3.left)
-    .attr("x", 0 - (height3 / 2))
+    .attr("y", 0 - margin9.left)
+    .attr("x", 0 - (height9 / 2))
     .attr("dy", "1em")
     .style("text-anchor", "middle")
     .style("font-size", "12px")
     .text("Movie Box Office Revenue");
 
   svg4.append("text")
-    .attr("x", (width3 / 2))
-    .attr("y", height3 + margin3.bottom)
+    .attr("x", (width9 / 2))
+    .attr("y", height9 + margin9.bottom - 10)
     .attr("text-anchor", "middle")
     .style("font-size", "12px")
     .text("Average Movie Rating");

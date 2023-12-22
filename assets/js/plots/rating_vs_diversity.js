@@ -1,16 +1,16 @@
 // set the dimensions and margins of the graph
-var margin = {top: 30, right: 30, bottom: 30, left: 60},
-    width = 600 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var margin_ = {top: 30, right: 30, bottom: 30, left: 80},
+    width_ = 800 - margin_.left - margin_.right,
+    height = 500 - margin_.top - margin_.bottom;
 
 // append the svg object to the body of the page
 var svg1 = d3.select("#rating_vs_diversity")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", width_ + margin_.left + margin_.right)
+    .attr("height", height + margin_.top + margin_.bottom)
   .append("g")
     .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+          "translate(" + margin_.left + "," + margin_.top + ")");
 
 // Read the data and compute summary statistics for each specie
 d3.csv("data/ethnicities_analysis.csv", function(data) {
@@ -23,7 +23,7 @@ d3.csv("data/ethnicities_analysis.csv", function(data) {
 
   // Build and Show the X scale. It is a band scale like for a boxplot: each group has an dedicated RANGE on the axis. This range has a length of x.bandwidth
   var x = d3.scaleBand()
-    .range([ 0, width ])
+    .range([ 0, width_ ])
     .domain(["1", "2", "3", "4", "5", "6"])
     .padding(0.05)     // This is important: it is the space between 2 groups. 0 means no padding. 1 is the maximum.
   svg1.append("g")
@@ -127,7 +127,7 @@ svg1.call(tip);
   dataPoints.forEach(function(d) {
     svg1.append("circle")
       .datum(d)  // Bind the data to the circle element
-      .attr("cx", x(d.diversity_count))
+      .attr("cx", x(d.diversity_count) + x.bandwidth()/2)
       .attr("cy", y(d.averageRating))
       .attr("r", 3)
       .style("fill", d.color)
@@ -136,7 +136,7 @@ svg1.call(tip);
       .on('mouseover', tip.show)  // Show tooltip on mouseover
       .on('mouseout', tip.hide);  // Hide tooltip on mouseout
     svg1.append("text")
-      .attr("x", x(d.diversity_count))
+      .attr("x", x(d.diversity_count) + x.bandwidth()/2)
       .attr("y", y(d.averageRating) - 12)
       .text(d.name)  // Set the text to the averageRating value
       .attr("font-size", "10px")
@@ -147,15 +147,15 @@ svg1.call(tip);
 
   // Add labels
   svg1.append("text")
-    .attr("x", (width / 2))
-    .attr("y", 0 - (margin.top / 2))
+    .attr("x", (width_ / 2))
+    .attr("y", 0 - (margin_.top / 2))
     .attr("text-anchor", "middle")
     .style("font-size", "16px")
     .text("Average Movie Rating vs Number of Different Ethnicities");
 
   svg1.append("text")
     .attr("transform", "rotate(-90)")
-    .attr("y", 0 - margin.left)
+    .attr("y", 0 - margin_.left)
     .attr("x", 0 - (height / 2))
     .attr("dy", "1em")
     .style("text-anchor", "middle")
@@ -163,8 +163,8 @@ svg1.call(tip);
     .text("Average Movie Rating");
 
   svg1.append("text")
-    .attr("x", (width / 2))
-    .attr("y", height + margin.bottom)
+    .attr("x", (width_ / 2))
+    .attr("y", height + margin_.bottom)
     .attr("text-anchor", "middle")
     .style("font-size", "12px")
     .text("Number of Different Ethnicities");

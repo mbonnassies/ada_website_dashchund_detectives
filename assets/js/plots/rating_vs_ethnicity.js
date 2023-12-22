@@ -1,12 +1,12 @@
 // set the dimensions and margins of the graph
 var margin2 = {top: 30, right: 30, bottom: 50, left: 60},
-    width2 = 1000 - margin2.left - margin2.right,
+    width10 = 1000 - margin2.left - margin2.right,
     height = 600 - margin2.top - margin2.bottom;
 
 // append the svg object to the body of the page
 var svg2 = d3.select("#rating_vs_ethnicity")
   .append("svg")
-    .attr("width", width2 + margin2.left + margin2.right)
+    .attr("width", width10 + margin2.left + margin2.right)
     .attr("height", height + margin2.top + margin2.bottom)
   .append("g")
     .attr("transform",
@@ -31,7 +31,7 @@ d3.csv("data/ethnicities_analysis.csv", function(data) {
 
   // Show the X scale
   var x = d3.scaleBand()
-    .range([ 0, width2 ])
+    .range([ 0, width10 ])
     .domain(["African", "Indigineous people, tribes", "Caucausian", "Asian", "Latin-American", "Middle-Eastern", "Multi-ethnic"])
     .paddingInner(1)
     .paddingOuter(.5)
@@ -119,7 +119,7 @@ d3.csv("data/ethnicities_analysis.csv", function(data) {
 
   // Add labels
   svg2.append("text")
-    .attr("x", (width2 / 2))
+    .attr("x", (width10 / 2))
     .attr("y", 0 - (margin2.top / 2))
     .attr("text-anchor", "middle")
     .style("font-size", "16px")
@@ -135,7 +135,7 @@ d3.csv("data/ethnicities_analysis.csv", function(data) {
     .text("Average Movie Rating");
 
   svg2.append("text")
-    .attr("x", (width2 / 2))
+    .attr("x", (width10 / 2))
     .attr("y", height + margin2.bottom)
     .attr("text-anchor", "middle")
     .style("font-size", "12px")
