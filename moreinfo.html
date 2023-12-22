@@ -29,6 +29,8 @@
 											<li><a href="index.html">Intro</a></li>
 											<li><a href="genreanalysis.html">Genre Analysis</a></li>
 											<li><a href="generic.html">Character Analysis</a></li>
+											<li><a href="causalityanalysis.html">Causality Analysis</a></li>
+											<li><a href="conclusion.html">Conclusion</a></li>
 											<li><a href="moreinfo.html">More Info</a></li>
 										</ul>
 									</div>
@@ -154,14 +156,14 @@
 								<section class="wrapper style5">
 								<div class="inner">
 									<h3>Genre Processing Technique</h3>
-								<p>Our dataset comprises of more than 70000 movies, the majority of which are missing data in some form or another. Interestingly enough, it seems that most movies (roughly 3/4) were released after 1960.
+								<p align = "justify">Our dataset comprises of more than 70000 movies, the majority of which are missing data in some form or another. Interestingly enough, it seems that most movies (roughly 3/4) were released after 1960.
 									We first started by filtering out obvious outliers related to the release date of the dataset (everything released after 2012).
 									We then decided to also remove revenue outliers, two movies whose grossing was above 2billions usd. One of them was avatar but the second is unknown (likely titanic).
 									Since our analysis is mainly genre based, it is imperative that we first delete any movie missing genre data. It turns out that the number of different genres has been greatly increasing over the years.
 									Overall there exists about 363 different genres (362 if we ignore the comdedy grammatical mistake). Drama, comedy, romance, action and thriller are obvious kings. Another genre that is dominantly present is black and white but that makes sense since first cameras could not capture colour.
 									This filtration process is not limitted to removing movies with no genres. Indeed, we must also remove movies with aberrant numbers of genres, most notably a 17 genres movie. We therefore removed any movie with 10 or more genres and any movie without any for a total of roughly 2000 movies.
 									</p>
-								<p>For the plot data, we first started by counting the number of sentences and the number of word tokens in each plot. The logic behind this step is that a plot containing too few sentences and words at the same time contains too little information to be relevant.
+								<p align = "justify">For the plot data, we first started by counting the number of sentences and the number of word tokens in each plot. The logic behind this step is that a plot containing too few sentences and words at the same time contains too little information to be relevant.
 									By doing some statistics on the number of words per sentences, we first saw that the distribution of words per sentences is exponential.
 									This also allowed us to find obvious outliers (2 words per sentence and below). After printing those outliers, we realized that some plots were not plots but rather were a list of the cast. Since this mistake repeated itself in non english movies, we decided to filter out all movies whose language is not english.
 									Doing so had one major advantage which was that now the plots dataframe was half its size which would speed up the preprocessing steps.
@@ -169,10 +171,10 @@
 									We still had some outliers (in terms of word per sentence) but at that point the first quartile was 17 word per sentence. We therefore filtered away any plot with less than 8 words per sentence (2 prepositions, 2 nouns, a verb, 2 adjectives and one adverb) .
 									</p> 
 									
-								<p>Regarding characters, we described the statistics of height and age since most plots were unreadable. We discovered that some numbers are in feet for height which insinuate a 500m giant and a good fraction of the actors is aged 0 or less.
+								<p align = "justify">Regarding characters, we described the statistics of height and age since most plots were unreadable. We discovered that some numbers are in feet for height which insinuate a 500m giant and a good fraction of the actors is aged 0 or less.
 									We decided to set obviously aberrant values to nan. After investigating age vs height we also set the age of every actor aged 10 or below with a height above 1.5m to nan. We did not touch child actors nor actors afflicted with dwarfism.
 									</p>
-								<p>Finally, we decided to investigate the male to female ratio over the years. Turns out that at the very beginning of cinema, this ratio was relatively smaller but it eventially started stabilizing around 3 (or 4).
+								<p align = "justify">Finally, we decided to investigate the male to female ratio over the years. Turns out that at the very beginning of cinema, this ratio was relatively smaller but it eventially started stabilizing around 3 (or 4).
 									The average number of different ethnicity over the years has been steadily increasing.</p>
 								</div>
 								</section>
